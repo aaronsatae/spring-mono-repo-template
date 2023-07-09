@@ -16,7 +16,9 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 import java.lang.reflect.Type;
 
 @Slf4j
-@RestControllerAdvice
+@RestControllerAdvice(basePackages = {
+        "com.example.springmonorepotemplate.web.user"
+})
 public class ApiResponseAdvisor implements ResponseBodyAdvice<Object> {
     @Override
     public boolean supports(MethodParameter returnType, Class<? extends HttpMessageConverter<?>> converterType) {
